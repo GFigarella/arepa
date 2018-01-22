@@ -1,0 +1,19 @@
+{
+  "name": "arepa",
+  "version": "1.0.0",
+  "description": "Eat-da-arepa application. The user can 'order' and arepa, and it will be placed in a waiting list, waiting to be devoured. All the arepas that are ordered are also stored in a MySQL database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GFigarella/arepa.git"
+  },
+  "author": "Gabriel Figarella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GFigarella/arepa/issues"
+  },
+  "homepage": "https://github.com/GFigarella/arepa#readme"
+}
