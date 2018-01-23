@@ -19,13 +19,18 @@ app.set("view engine", "handlebars");
 
 //connect to the DB
 var mysql = require("mysql");
-
-var connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "eat_da_arepa_db"
-});
+var connection;
+if (process.env.JAWSDB_URL){
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+else{
+  var connection = mysql.createConnection({
+      host: "localhost",
+      user: "root",
+      password: "",
+      database: "eat_da_arepa_db"
+  });
+}
 
 connection.connect(function(err) {
 if (err) {

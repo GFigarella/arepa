@@ -11,5 +11,7 @@
  * The arepa's will then be stored in a database
  * Once entered, the arepa's go to a 'waiting list', and will have an option to be devoured.
  
- 
+ ### Using the app
+
+ ![alt text](./eat_da_arepa.gif "Logo Title Text 1")
  
