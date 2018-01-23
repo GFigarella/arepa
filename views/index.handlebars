@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>arepas</h1>
+    <h1>Arepas</h1>
 
     <h2>Order your arepa</h2>
 
@@ -8,7 +8,34 @@
     {{!-- and then list for the arepas in DB --}}
 
     {{!-- you just ate section.  --}}
-    <ul>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Filling</th>
+            <th scope="col">Devour?</th>
+            </tr>
+        </thead>
+        {{#each arepas}}
+            {{#unless devoured}}
+                <form action = "arepaDevour" method="POST">
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{this.id}}</th>
+                            <td>{{this.filling}}</td>
+                            <td>
+                                <input type="hidden" name="arepaDevour" value = "{{id}}">
+                                <button type="submit">Devour!</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </form>
+            {{/unless}}
+        {{/each}}
+    </table>
+
+
+    {{!-- <ul>
         {{#each arepas}}
             {{#unless devoured}}
             <form action = "arepaDevour" method="POST">
@@ -20,7 +47,7 @@
             </form>
             {{/unless}}
         {{/each}}
-    </ul>
+    </ul> --}}
 
     <h2>Arepas that have been devoured!</h2>
 
