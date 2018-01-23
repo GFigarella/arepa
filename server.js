@@ -60,13 +60,14 @@ app.post("/newArepa", function(req, res) {
         return res.status(500).end();
       }
   
-      // Send back the ID of the new todo
+
       console.log("test");
       res.redirect("/")
       console.log({ id: result.insertId });
     });
   });
 
+  //move devoured arepas to a separate div in the site
   app.post("/arepaDevour", function (req, res){
     console.log("It has been devoured!");
     connection.query("UPDATE arepas SET devoured = 1 WHERE id = ?", [req.body.arepaDevour], function(err, data){

@@ -1,0 +1,11 @@
+body{
+    background-image: url("http://food.fnr.sndimg.com/content/dam/images/food/fullset/2017/4/7/0/FNK_How-to-Make-Arepas-H_s4x3.jpg.rend.hgtvcom.616.462.suffix/1491598037813.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.container{
+    background-color: rgba(204, 198, 189, 1);
+    border: outset rgb(141, 133, 133) 3px;
+    border-radius: 5px;
+}
