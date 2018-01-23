@@ -6,6 +6,6 @@ USE eat_da_arepa_db;
 CREATE TABLE arepas(
     id INT NOT NULL AUTO_INCREMENT,
     filling VARCHAR(255) NOT NULL,
-    devoured BOOLEAN,
+    devoured BOOLEAN DEFAULT 0,
     PRIMARY KEY (id)
 )

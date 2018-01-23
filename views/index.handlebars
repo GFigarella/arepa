@@ -11,10 +11,13 @@
     <ul>
         {{#each arepas}}
             {{#unless devoured}}
-            <p>
-                {{this.id}}. {{this.filling}} 
-                <button data-planid="{{this.id}}" class="devour">Devour!</button>
-            </p>
+            <form action = "arepaDevour" method="POST">
+                <p>
+                    {{this.id}}. {{this.filling}} 
+                    <input type="hidden" name="arepaDevour" value = "{{id}}">
+                    <button type="submit">Devour!</button>
+                </p>
+            </form>
             {{/unless}}
         {{/each}}
     </ul>
@@ -24,17 +27,17 @@
     <ul>
         {{#each arepas}}
             {{#if devoured}}
-            {{> cats/cat-block sleep=false}}
+            <li>{{this.id}}. {{this.filling}}</li>
             {{/if}}
         {{/each}}
     </ul>
 
-    <h2>Add a Cat</h2>
-    <form class="create-form" action="/filling" method="POST">
+    <h2>Order a New Arepa!</h2>
+    <form class="create-form" action="/newArepa" method="POST">
 
     <div class="form-group">
-        <label for="filling">Arepa filling:</label>
-        <input type="text" id="filling" name="myArepa">
+        <label for="newArepa">Arepa filling:</label>
+        <input type="text" id="newArepa" name="newArepa">
     </div>
 
     <button type="submit">Order Arepa</button>

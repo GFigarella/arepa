@@ -49,18 +49,25 @@ app.get("/", function(req, res) {
 });
 
 // Create a new arepa
-app.post("/filling", function(req, res) {
-    connection.query("INSERT INTO arepas (filling, devoured) VALUES (?,?)", [req.body.filling], function(err, result) {
+app.post("/newArepa", function(req, res) {
+    connection.query("INSERT INTO arepas (filling) VALUES (?)", [req.body.newArepa], function(err, result) {
       if (err) {
         return res.status(500).end();
       }
   
       // Send back the ID of the new todo
       console.log("test");
-      res.json({ id: result.insertId });
+      res.redirect("/")
       console.log({ id: result.insertId });
     });
   });
+
+  app.post("/arepaDevour", function (req, res){
+    console.log("It has been devoured!");
+    connection.query("UPDATE arepas SET devoured = 1 WHERE id = ?", [req.body.arepaDevour], function(err, data){
+      res.redirect("/");
+    });
+  })
 
 
 app.listen(port, function() {
