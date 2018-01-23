@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>arepas</h1>
+
+    <h2>Order your arepa</h2>
+
+    {{!-- form where user orders arepa, remember to put inputtype name and value #each comes before #unless, and you close #unless first, then #each --}}
+
+    {{!-- and then list for the arepas in DB --}}
+
+    {{!-- you just ate section.  --}}
+    <ul>
+        {{#each arepas}}
+            {{#unless devoured}}
+            <p>
+                {{this.id}}. {{this.filling}} 
+                <button data-planid="{{this.id}}" class="devour">Devour!</button>
+            </p>
+            {{/unless}}
+        {{/each}}
+    </ul>
+
+    <h2>Arepas that have been devoured!</h2>
+
+    <ul>
+        {{#each arepas}}
+            {{#if devoured}}
+            {{> cats/cat-block sleep=false}}
+            {{/if}}
+        {{/each}}
+    </ul>
+
+    <h2>Add a Cat</h2>
+    <form class="create-form" action="/filling" method="POST">
+
+    <div class="form-group">
+        <label for="filling">Arepa filling:</label>
+        <input type="text" id="filling" name="myArepa">
+    </div>
+
+    <button type="submit">Order Arepa</button>
+    </form>
+
+
+
+
+
+
+</div>
